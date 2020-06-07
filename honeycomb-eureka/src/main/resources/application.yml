@@ -1,0 +1,29 @@
+server:
+  port: 7001
+  max-http-header-size: 102400
+spring:
+  application:
+    name: honeycomb-eureka
+eureka:
+  instance:
+    hostname: 192.168.0.108
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    registry-fetch-interval-seconds: 5
+    service-url:
+        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    #关闭自我保护机制 防止失效的服务也被一直访问 (Spring Cloud默认该配置是 true
+    enable-self-preservation: false
+    #每隔30s扫描服务列表，移除失效服务
+    eviction-interval-timer-in-ms: 3000
+logging:
+  level:
+    root: info
+    com.honeycom: debug
+  file: logs/${spring.application.name}.log
+
