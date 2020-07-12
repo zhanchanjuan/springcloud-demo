@@ -1,9 +1,6 @@
 package com.myproject.service;
 
 import com.myproject.common.pojo.Dept;
-import org.apache.ibatis.annotations.Param;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;

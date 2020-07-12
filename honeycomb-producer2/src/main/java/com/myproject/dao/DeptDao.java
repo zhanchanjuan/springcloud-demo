@@ -19,7 +19,7 @@ public interface DeptDao {
 
     int addDept(Dept dept);
 
-    Map<String,Object> selDeptById(@Param("deptNo")Integer deptNo);
+    Map<String,Object> selDeptById(@Param("deptNo") Integer deptNo);
 
 
 }

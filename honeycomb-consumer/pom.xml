@@ -26,6 +26,14 @@
             <version>2.1.2.RELEASE</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-ribbon -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
+            <version>1.3.5.RELEASE</version>
+        </dependency>
+
+
         <!--公共api模块引用-->
         <dependency>
             <groupId>com.myproject</groupId>

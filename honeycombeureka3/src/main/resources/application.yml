@@ -1,12 +1,12 @@
 server:
-  port: 7001
+  port: 7003
   max-http-header-size: 102400
 spring:
   application:
-    name: honeycomb-eureka
+    name: honeycombeureka3
 eureka:
   instance:
-    hostname: eureka7001.com   #eureka服务器的实例名称.通过域名映射
+    hostname: eureka7003.com   #eureka服务器的实例名称
     lease-expiration-duration-in-seconds: 15
     lease-renewal-interval-in-seconds: 5
     instance-id: ${spring.application.name}:${server.port}
@@ -17,7 +17,7 @@ eureka:
     registry-fetch-interval-seconds: 5
     service-url: #服务监控页面
         #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-        defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+         defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
   server:
     #关闭自我保护机制 防止失效的服务也被一直访问 (Spring Cloud默认该配置是 true
     enable-self-preservation: false

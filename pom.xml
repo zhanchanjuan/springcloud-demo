@@ -9,9 +9,12 @@
     <modules>
         <module>honeycomb-common</module>
         <module>honeycomb-producer</module>
-        <module>honeycomb-producer</module>
         <module>honeycomb-consumer</module>
         <module>honeycomb-eureka</module>
+        <module>honeycomeureka2</module>
+        <module>honeycombeureka3</module>
+        <module>honeycomb-producer2</module>
+        <module>honeycomb-producer3</module>
     </modules>
     <name>honeycomb-cloud</name>
     <description>Demo project for Spring Cloud</description>
