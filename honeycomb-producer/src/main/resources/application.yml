@@ -41,7 +41,7 @@ spring:
   resources:
     static-locations: classpath:/static/
   redis:
-    host: 172.16.23.39
+    host: 172.16.23.78
     port: 6379
     password: 123456
     timeout: 100000     # 连接超时时间（毫秒）
@@ -54,13 +54,13 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://192.168.0.108:7001/eureka/
+      defaultZone: http://172.16.23.78:7001/eureka/
     registry-fetch-interval-seconds: 5
   instance:
     lease-expiration-duration-in-seconds: 15
     lease-renewal-interval-in-seconds: 5
     prefer-ip-address: true
-    ip-address: 192.168.0.108
+    ip-address: 172.16.23.78
     instance-id: ${spring.application.name}:${server.port} #修改eureka上的默认描述信息
 info:
   app_name: honeycomb-producer

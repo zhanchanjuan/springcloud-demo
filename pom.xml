@@ -12,6 +12,7 @@
         <module>honeycomb-producer</module>
         <module>honeycomb-consumer</module>
         <module>honeycomb-eureka</module>
+        <module>file-center8089</module>
     </modules>
     <name>honeycomb-cloud</name>
     <description>Demo project for Spring Cloud</description>
