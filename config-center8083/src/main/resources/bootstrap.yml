@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: config-center8083
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:/configs/{profile}
+        git:
+          uri: https://gitee.com/zhang.w/cloud-service-configs.git
+          username:
+          password:
+          default-label: master
+          force-pull: true
+          searchPaths: '{profile}'
+server:
+  port: 8083
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.ip-address}:7001/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+    prefer-ip-address: true
+    ip-address: localhost
+    instance-id: ${spring.application.name}:${server.port}
+info:
+  app_name: config-center8083
+  company_name: honeycomb connection
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    root: info
+    com.honeycom: debug
+  file: logs/${spring.application.name}.log

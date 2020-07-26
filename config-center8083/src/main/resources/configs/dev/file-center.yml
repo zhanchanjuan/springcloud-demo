@@ -1,0 +1,56 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/honeycomb-db01?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 1994
+    hikari:
+      minimum-idle: 15
+      maximum-pool-size: 30
+      connection-test-query: SELECT 1
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+  redis:
+    # 数据库索引(默认:0)
+    database: 10
+    host: localhost
+    port: 6379
+    password:
+    timeout: 10s
+    lettuce:
+      pool:
+        min-idle: 5
+        max-idle: 30
+        max-active: 30
+        max-wait: -1ms
+  mvc:
+    servlet:
+      load-on-startup: 1
+  aop:
+    proxy-target-class: true
+    #zipkin和分布式
+  zipkin:
+    base-url: http://192.168.0.108:9411
+    enabled: true
+    sender:
+      type: web
+mybatis:
+  type-aliases-package: com.myproject.common.pojo
+  mapper-locations: classpath:mapping/**/*Mapper.xml
+  # mybatis的反射工具类
+  configuration:
+    mapUnderscoreToCamelCase: true
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
