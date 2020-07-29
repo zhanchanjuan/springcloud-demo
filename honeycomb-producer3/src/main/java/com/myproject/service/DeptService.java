@@ -14,7 +14,5 @@ public interface DeptService {
     int addDept(Dept dept);
 
     Map<String,Object> selDeptById(Integer deptNo);
-    Map<String,Object> selDeptById2(Integer deptNo);
-    Map<String,Object> selDeptById3(Integer deptNo);
-    Map<String,Object> selDeptById4(Integer deptNo);
+
 }

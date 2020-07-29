@@ -1,7 +1,6 @@
 server:
   port: 9001
   max-http-header-size: 102400
-
   #Spring配置
 spring:
   application:

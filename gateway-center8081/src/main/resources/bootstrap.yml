@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: gateway-center8081
+  cloud:
+    config:
+      discovery:
+        enable: true
+        serviceId: config-center8083
+      profile: dev
+      fail-fast: true
+      name: gateway-center
+server:
+  port: 8081
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.ip-address}:7001/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+    prefer-ip-address: true
+    ip-address: localhost
+    instance-id: ${spring.application.name}:${server.port}
+info:
+  app_name: config-center8083
+  company_name: honeycomb connection
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    root: info
+    com.honeycom: debug
+  file: logs/${spring.application.name}.log
