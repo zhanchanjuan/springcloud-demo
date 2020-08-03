@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 @Documented
-public @interface RedisLock {
+public @interface RedisLockAnnotation {
     String lockPrefix() default "";
     String lockKey() default "";
     long timeOut() default 5;
