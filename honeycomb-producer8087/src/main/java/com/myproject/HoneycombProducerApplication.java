@@ -3,6 +3,7 @@ package com.myproject;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 
@@ -12,8 +13,9 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 @SpringBootApplication
 @ServletComponentScan
 @EnableEurekaServer
-public class ConsumerApplication {
+@EnableDiscoveryClient
+public class HoneycombProducerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ConsumerApplication.class,args);
+        SpringApplication.run(HoneycombProducerApplication.class,args);
     }
 }

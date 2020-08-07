@@ -7,21 +7,32 @@
 		<version>1.0</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>config-center8083</artifactId>
+
+	<artifactId>zuul-center8081</artifactId>
 
 	<dependencies>
-		<!-- spring cloud config 服务端包 -->
-		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-config-server -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
-			<version>2.2.1.RELEASE</version>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<version>2.0.0.RELEASE</version>
 		</dependency>
-		<!--eureka服务-->
+
+		<!--网关服务-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-			<version>2.1.2.RELEASE</version>
+			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-gateway -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
+			<version>2.1.1.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
 
 		<dependency>

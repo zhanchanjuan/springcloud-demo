@@ -2,18 +2,19 @@ package com.myproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
-
 /**
- * Created by 书一 on 2020/6/6.
+ * @author shuyi
+ * @date 2020/8/3
  */
 @SpringBootApplication
-@ServletComponentScan
 @EnableEurekaServer
-public class ConsumerApplication {
+@EnableDiscoveryClient
+public class AuthApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ConsumerApplication.class,args);
+        SpringApplication.run(AuthApplication.class);
     }
+
 }

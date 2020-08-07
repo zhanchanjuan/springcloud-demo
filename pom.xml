@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.myproject</groupId>
-    <artifactId>honeycomb-cloud</artifactId>
+    <artifactId>springcloud-demo</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
     <modules>
@@ -14,10 +14,13 @@
         <module>honeycomb-eureka3</module>
         <module>file-center8089</module>
         <module>config-center8083</module>
-        <module>gateway-center8081</module>
-        <module>honeycomb-producer</module>
+        <module>honeycomb-producer8087</module>
         <module>honeycomb-producer2</module>
         <module>honeycomb-producer3</module>
+        <module>payment-center8088</module>
+        <module>auth-center8082</module>
+        <module>monitor-center8085</module>
+        <module>zuul-center8081</module>
     </modules>
     <name>honeycomb-cloud</name>
     <description>Demo project for Spring Cloud</description>

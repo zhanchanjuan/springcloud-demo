@@ -9,23 +9,39 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>honeycomb-eureka3</artifactId>
+    <artifactId>monitor-center8085</artifactId>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <monitor.version>2.0.2</monitor.version>
+    </properties>
+
+
     <dependencies>
+
+        <!-- spring cloud eureka -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-            <version>2.1.2.RELEASE</version>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!--热部署-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!--监控界面化-->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-server</artifactId>
+            <version>${monitor.version}</version>
+        </dependency>
+
+
     </dependencies>
+
+
+
 
 
 </project>

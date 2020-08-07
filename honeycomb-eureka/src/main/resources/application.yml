@@ -1,9 +1,9 @@
-server:
-  port: 7001
-  max-http-header-size: 102400
 spring:
   application:
     name: honeycomb-eureka
+server:
+  port: 7001
+  max-http-header-size: 102400
 eureka:
   instance:
     hostname: eureka7001.com   #eureka服务器的实例名称.通过域名映射

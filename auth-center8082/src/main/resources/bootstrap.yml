@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: auth-center8082
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: config-center8083
+      profile: dev
+      fail-fast: true
+      name: auth-center
+server:
+  port: 8082
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.ip-address}:7001/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-expiration-duration-in-seconds: 15
+    lease-renewal-interval-in-seconds: 5
+    prefer-ip-address: true
+    ip-address: localhost
+    instance-id: ${spring.application.name}:${server.port}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    root: info
+    com.honeycom: debug
+  file: logs/${spring.application.name}.log
+info:
+  app_name: file-center8089
+  company_name: honeycomb connection
+
+

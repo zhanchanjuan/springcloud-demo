@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>honeycomb-producer2</artifactId>
+    <artifactId>honeycomb-producer</artifactId>
 
     <dependencies>
         <dependency>
@@ -27,6 +27,26 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
+        <!--Fegin服务调用 https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>2.1.0.RELEASE</version>
+        </dependency>
+
+        <!-- 服务降级/熔断/限流/监控https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-hystrix -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
+<!--            <version>2.2.1.RELEASE</version>-->
+<!--        </dependency>-->
+        <!--网关服务 https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-gateway -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-gateway</artifactId>-->
+<!--            <version>2.1.1.RELEASE</version>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>com.myproject</groupId>
             <artifactId>honeycomb-common</artifactId>
@@ -86,8 +106,17 @@
             <artifactId>swagger-bootstrap-ui</artifactId>
             <version>1.9.6</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+        </dependency>
 
     </dependencies>
+
 
 
 </project>
