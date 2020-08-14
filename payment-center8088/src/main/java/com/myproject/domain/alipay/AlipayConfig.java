@@ -71,7 +71,7 @@ public class AlipayConfig implements Serializable {
     private String gatewayUrl;
 
     /**
-     * 编码方式，固定格式
+     * 编码方式，固定格式--utf-8
      */
     @Column(name = "charset", columnDefinition = "VARCHAR(50) COMMENT '编码格式'")
     @ApiModelProperty("编码方式，固定格式")
@@ -95,7 +95,7 @@ public class AlipayConfig implements Serializable {
     private String returnUrl;
 
     /**
-     * 数据传输类型，固定格式
+     * 数据传输类型，固定格式--json
      */
     @Column(name = "format", columnDefinition = "VARCHAR(50) COMMENT '数据格式'")
     @ApiModelProperty("数据传输类型，固定格式")

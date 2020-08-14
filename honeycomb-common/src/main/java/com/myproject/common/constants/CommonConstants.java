@@ -1,4 +1,4 @@
-package com.myproject.constants;
+package com.myproject.common.constants;
 
 /**
  * 系统常量

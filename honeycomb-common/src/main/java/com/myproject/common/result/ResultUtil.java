@@ -1,15 +1,17 @@
-package com.myproject.util;
+package com.myproject.common.result;
 
-import com.myproject.constants.CommonConstants;
-import com.myproject.constants.ResultEnum;
-import com.myproject.domain.Result;
+/**
+ * @author shuyi
+ * @date 2020/8/14
+ */
 
+import com.myproject.common.constants.CommonConstants;
+import com.myproject.common.constants.ResultEnum;
 
 /**
  * 返回结果工具类
  */
-public class ResultUtil<T> {
-
+public class ResultUtil {
     /**
      * 成功
      * @param code 返回码

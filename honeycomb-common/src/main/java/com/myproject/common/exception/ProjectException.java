@@ -1,7 +1,8 @@
-package com.myproject.exception;
+package com.myproject.common.exception;
 
 
-import com.myproject.constants.ResultEnum;
+
+import com.myproject.common.constants.ResultEnum;
 import lombok.Getter;
 import lombok.Setter;
 

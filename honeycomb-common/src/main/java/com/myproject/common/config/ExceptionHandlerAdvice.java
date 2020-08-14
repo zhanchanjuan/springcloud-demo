@@ -1,10 +1,11 @@
-package com.myproject.config;
+package com.myproject.common.config;
 
 
-import com.myproject.domain.Result;
-import com.myproject.exception.ProjectException;
-import com.myproject.util.ExceptionUtil;
-import com.myproject.util.ResultUtil;
+
+import com.myproject.common.exception.ProjectException;
+import com.myproject.common.result.Result;
+import com.myproject.common.result.ResultUtil;
+import com.myproject.common.util.ExceptionUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
