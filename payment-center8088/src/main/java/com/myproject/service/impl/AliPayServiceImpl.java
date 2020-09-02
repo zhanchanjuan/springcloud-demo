@@ -4,15 +4,21 @@ import com.alipay.api.domain.AlipayTradePagePayModel;
 import com.alipay.api.domain.AlipayTradeWapPayModel;
 import com.myproject.common.exception.ProjectException;
 import com.myproject.config.AliPaySystemConfig;
+import com.myproject.domain.CommonPage;
 import com.myproject.domain.alipay.AlipayConfig;
 import com.myproject.repository.AliPayRepository;
 import com.myproject.service.AliPayService;
+import com.myproject.util.BeanUtil;
+import com.myproject.util.PageUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -79,8 +85,10 @@ public class AliPayServiceImpl implements AliPayService {
     @Modifying
     @CachePut(key = "'config:'+#alipayConfig.getId()")
     public AlipayConfig updateConfig(AlipayConfig alipayConfig) {
-        alipayConfig.setUpdateTime(new Date());
-        return aliPayRepository.save(alipayConfig);
+        AlipayConfig config=findConfigById(alipayConfig.getId());
+        BeanUtil.copyPropertiesWithoutBlank(alipayConfig,config);
+        config.setUpdateTime(new Date());
+        return aliPayRepository.save(config);
     }
 
     /**
@@ -118,8 +126,20 @@ public class AliPayServiceImpl implements AliPayService {
         if(null==config){
             config=new AlipayConfig();
         }
+        ExampleMatcher exampleMatcher = ExampleMatcher.matching().
+                withMatcher("sellerId", ExampleMatcher.GenericPropertyMatchers.contains());
+        Example<AlipayConfig> example = Example.of(config, exampleMatcher);
+        return aliPayRepository.findAll(example);
+    }
 
-        return null;
+
+    @Override
+    public Page<AlipayConfig> getConfigPage(CommonPage<AlipayConfig> commonPageReq) {
+        if(null==commonPageReq.getData()){
+            commonPageReq.setData(new AlipayConfig());
+        }
+        return aliPayRepository.findAll(Example.of(commonPageReq.getData()),
+                PageUtil.getPageable(commonPageReq,AlipayConfig.class));
     }
 
     @Override

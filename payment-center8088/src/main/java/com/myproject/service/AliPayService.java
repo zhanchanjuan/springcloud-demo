@@ -2,7 +2,9 @@ package com.myproject.service;
 
 import com.alipay.api.domain.AlipayTradePagePayModel;
 import com.alipay.api.domain.AlipayTradeWapPayModel;
+import com.myproject.domain.CommonPage;
 import com.myproject.domain.alipay.AlipayConfig;
+import org.springframework.data.domain.Page;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -65,7 +67,7 @@ public interface AliPayService {
      * @param commonPageReq
      * @return
      */
-//    Page<AlipayConfig> getConfigPage(CommonPage<AlipayConfig> commonPageReq);
+    Page<AlipayConfig> getConfigPage(CommonPage<AlipayConfig> commonPageReq);
 
     /**
      * 处理来自PC的交易请求
